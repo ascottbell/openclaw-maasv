@@ -1,0 +1,27 @@
+{
+  "name": "@maasv/openclaw-memory",
+  "version": "0.1.0",
+  "description": "OpenClaw memory plugin powered by maasv — cognition layer with knowledge graph, lifecycle management, and experiential learning",
+  "type": "module",
+  "main": "index.ts",
+  "license": "BSL-1.1",
+  "author": "Adam Bell <adam@maasv.ai>",
+  "keywords": [
+    "openclaw",
+    "memory",
+    "plugin",
+    "maasv",
+    "knowledge-graph",
+    "cognition"
+  ],
+  "dependencies": {
+    "@sinclair/typebox": "^0.34.0"
+  },
+  "devDependencies": {
+    "openclaw": "*",
+    "typescript": "^5.5.0"
+  },
+  "openclaw": {
+    "extensions": ["./index.ts"]
+  }
+}

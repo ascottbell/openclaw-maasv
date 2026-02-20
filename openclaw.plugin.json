@@ -1,0 +1,90 @@
+{
+  "id": "memory-maasv",
+  "kind": "memory",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["serverUrl"],
+    "properties": {
+      "serverUrl": {
+        "type": "string",
+        "description": "URL of maasv-server instance",
+        "default": "http://127.0.0.1:18790"
+      },
+      "apiKey": {
+        "type": "string",
+        "description": "API key for maasv-server (X-Maasv-Key header)"
+      },
+      "autoRecall": {
+        "type": "boolean",
+        "description": "Inject relevant memories before each agent turn",
+        "default": true
+      },
+      "autoCapture": {
+        "type": "boolean",
+        "description": "Extract and store memories after each conversation",
+        "default": true
+      },
+      "maxRecallResults": {
+        "type": "number",
+        "description": "Max memories injected per turn",
+        "default": 5,
+        "minimum": 1,
+        "maximum": 20
+      },
+      "maxRecallTokens": {
+        "type": "number",
+        "description": "Max tokens for recalled context",
+        "default": 2000,
+        "minimum": 500,
+        "maximum": 8000
+      },
+      "enableGraph": {
+        "type": "boolean",
+        "description": "Expose knowledge graph tools to the agent",
+        "default": true
+      },
+      "enableWisdom": {
+        "type": "boolean",
+        "description": "Expose wisdom/learning tools to the agent",
+        "default": false
+      }
+    }
+  },
+  "uiHints": {
+    "serverUrl": {
+      "label": "maasv Server URL",
+      "placeholder": "http://127.0.0.1:18790"
+    },
+    "apiKey": {
+      "label": "API Key",
+      "sensitive": true,
+      "placeholder": "your-api-key"
+    },
+    "autoRecall": {
+      "label": "Auto-Recall",
+      "help": "Inject relevant long-term memories before each agent turn"
+    },
+    "autoCapture": {
+      "label": "Auto-Capture",
+      "help": "Extract entities and store memories from conversations automatically"
+    },
+    "maxRecallResults": {
+      "label": "Max Recall Results",
+      "advanced": true
+    },
+    "maxRecallTokens": {
+      "label": "Max Recall Tokens",
+      "advanced": true
+    },
+    "enableGraph": {
+      "label": "Knowledge Graph Tools",
+      "help": "Expose entity and relationship tools to the agent"
+    },
+    "enableWisdom": {
+      "label": "Wisdom Tools",
+      "help": "Expose experiential learning tools (log reasoning, record outcomes)",
+      "advanced": true
+    }
+  }
+}
