@@ -51,7 +51,7 @@ export function createMemorySearch(client: MaasvClient) {
       const formatted = results
         .map((m, i) => {
           const subject = m.subject ? `[${m.subject}] ` : "";
-          const score = m._imp_score ? ` (score: ${m._imp_score.toFixed(3)})` : "";
+          const score = m.relevance ? ` (relevance: ${m.relevance.toFixed(2)})` : "";
           return `${i + 1}. ${subject}${m.content}${score}\n   id: ${m.id} | category: ${m.category} | confidence: ${m.confidence}`;
         })
         .join("\n\n");

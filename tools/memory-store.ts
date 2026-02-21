@@ -1,7 +1,7 @@
 /**
  * memory_store tool — store a memory with automatic dedup.
  *
- * maasv checks for near-duplicate memories (vector distance < 0.05)
+ * maasv checks for near-duplicate memories (cosine similarity > 0.95)
  * before storing. If a duplicate exists, returns the existing ID.
  */
 

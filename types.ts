@@ -30,8 +30,7 @@ export interface Memory {
 }
 
 export interface ScoredMemory extends Memory {
-  distance?: number;
-  _imp_score?: number;
+  relevance?: number;
 }
 
 export interface StoreRequest {
